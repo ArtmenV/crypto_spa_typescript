@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { cryptoAddAction } from "../store/getApiData/action";
 import { useSelector, useDispatch } from "react-redux";
 import { AppState } from "../store/index";
+import { CryptoDatasItem } from "./CryptoDataItem";
 
-export const CryptoData = () => {
+export const CryptoDatas = () => {
   const cryptoData = useSelector(
     (state: AppState) => state.CryptoReducer.cryptoData
   );
@@ -20,7 +21,15 @@ export const CryptoData = () => {
       Привет мир
       <ul>
         {cryptoData.map(crypto => {
-          return <li>{crypto.name}</li>;
+          return (
+            <CryptoDatasItem
+              key={crypto.id}
+              symbol={crypto.symbol}
+              name={crypto.name}
+              price={crypto.priceUsd}
+              marketCap={crypto.marketCapUsd}
+            />
+          );
         })}
       </ul>
     </div>

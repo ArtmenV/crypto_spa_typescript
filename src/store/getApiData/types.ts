@@ -19,7 +19,7 @@ export interface IData {
 // }
 
 export interface CryptoDatas {
-  cryptoData: IData[];
+  cryptoData: Array<IData>;
   loading: boolean;
 }
 

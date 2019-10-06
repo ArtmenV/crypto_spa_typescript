@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { instAPI } from "./api/index";
 import "./App.css";
-import { CryptoData } from "./components/CryptoData";
+import { CryptoDatas } from "./components/CryptoDatas";
+import { Navbar } from "./components/Navbar";
 
 // export interface IData {
 //   changePercent24Hr: string;
@@ -32,21 +33,19 @@ const App: React.FC = () => {
   //   };
   //   runEffect();
   // }, []);
-
   return (
     <div>
-      <CryptoData />
+      <Navbar />
+      <CryptoDatas />
     </div>
   );
 };
 
 export default App;
 
-{
-  /* <ul>
-          {datas.data.map(data => {
-            console.log(data.id, "asdas");
-            return <li key={data.id}>{data.name}</li>;
-          })}
-        </ul> */
-}
+// {datas.data.map(data => {
+//           console.log(data.id, "asdas");
+//           return <li key={data.id}>{data.name}</li>;
+//         })}
+//       </ul>{" "}
+//       }

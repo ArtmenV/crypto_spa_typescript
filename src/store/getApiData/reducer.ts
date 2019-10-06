@@ -1,4 +1,9 @@
-import { CryptoDatas, CryptoDataActionTypes, ActionsType } from "./types";
+import {
+  CryptoDatas,
+  CryptoDataActionTypes,
+  ActionsType,
+  IData
+} from "./types";
 
 export const initialState: CryptoDatas = {
   cryptoData: [],
@@ -14,9 +19,9 @@ export const CryptoReducer = (
       return { ...state, loading: true };
     case CryptoDataActionTypes.ADD_DATA_SUCCESS:
       return {
-        ...state,
+        ...state.cryptoData,
         loading: false,
-        cryptoData: [...state.cryptoData, action.payload]
+        cryptoData: action.payload
       };
 
     default:
