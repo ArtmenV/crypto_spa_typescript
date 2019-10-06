@@ -7,7 +7,7 @@ export interface IData {
   id: string;
   marketCapUsd: string;
   maxSupply: string;
-  name: "Bitcoin";
+  name: string;
   priceUsd: string;
   rank: string;
   supply: string;
