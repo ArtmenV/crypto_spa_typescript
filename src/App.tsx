@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { instAPI } from "./api/index";
 import "./App.css";
 
-export interface DataPost {
+export interface IData {
   userId: number;
   id: number;
   title: string;
   body: string;
 }
-
-const App: React.FC<any> = () => {
+// Array<DataPost>()
+const App: React.FC = () => {
   const [datas, setDatas] = useState({
-    data: Array<DataPost>()
+    data: []
   });
 
   useEffect(() => {
