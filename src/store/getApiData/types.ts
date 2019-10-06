@@ -1,17 +1,26 @@
 import { Action } from "redux";
 
-export interface Data {
-  text: string;
-  id: number;
-  important: boolean;
+export interface IData {
+  changePercent24Hr: string;
+  id: string;
+  marketCapUsd: string;
+  maxSupply: string;
+  name: string;
+  priceUsd: string;
+  rank: string;
+  supply: string;
+  symbol: string;
+  volumeUsd24Hr: string;
+  vwap24Hr: string;
 }
 
-export interface Error {
-  text: string;
-}
+// export interface Error {
+//   text: string;
+// }
 
-export interface CryptoData {
-  notes: Data[];
+export interface CryptoDatas {
+  cryptoData: IData[];
+  loading: boolean;
 }
 
 export enum CryptoDataActionTypes {
@@ -26,7 +35,7 @@ export interface DataActionTypes extends Action {
 
 export interface DataSuccessActionTypes extends Action {
   type: CryptoDataActionTypes.ADD_DATA_SUCCESS;
-  payload: Data;
+  payload: IData;
 }
 
 export interface DataErrorActionTypes extends Action {
