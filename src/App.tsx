@@ -11,16 +11,16 @@ export interface DataPost {
 
 const App: React.FC<any> = () => {
   const [datas, setDatas] = useState({
-    post: Array<DataPost>()
+    data: Array<DataPost>()
   });
 
   useEffect(() => {
     const runEffect = async () => {
       const Chipo = await instAPI({
-        url: `/posts`,
+        url: `/assets`,
         method: "get"
       });
-      setDatas({ post: Chipo.data });
+      setDatas({ data: Chipo.data });
     };
     runEffect();
   }, []);
@@ -30,10 +30,10 @@ const App: React.FC<any> = () => {
     <div className="App">
       <header className="App-header">
         <ul>
-          {datas.post.map(data => {
+          {/* {datas.post.map(data => {
             console.log(data.id, "asdas");
             return <li key={data.id}>{data.title}</li>;
-          })}
+          })} */}
         </ul>
       </header>
     </div>
