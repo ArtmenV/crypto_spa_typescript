@@ -3,15 +3,22 @@ import { instAPI } from "./api/index";
 import "./App.css";
 
 export interface IData {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+  changePercent24Hr: string;
+  id: string;
+  marketCapUsd: string;
+  maxSupply: string;
+  name: "Bitcoin";
+  priceUsd: string;
+  rank: string;
+  supply: string;
+  symbol: string;
+  volumeUsd24Hr: string;
+  vwap24Hr: string;
 }
-// Array<DataPost>()
+
 const App: React.FC = () => {
   const [datas, setDatas] = useState({
-    data: []
+    data: Array<IData>()
   });
 
   useEffect(() => {
@@ -20,7 +27,7 @@ const App: React.FC = () => {
         url: `/assets`,
         method: "get"
       });
-      setDatas({ data: Chipo.data });
+      setDatas({ data: Chipo.data.data });
     };
     runEffect();
   }, []);
@@ -30,10 +37,10 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <ul>
-          {/* {datas.post.map(data => {
+          {datas.data.map(data => {
             console.log(data.id, "asdas");
-            return <li key={data.id}>{data.title}</li>;
-          })} */}
+            return <li key={data.id}>{data.name}</li>;
+          })}
         </ul>
       </header>
     </div>
