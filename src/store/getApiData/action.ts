@@ -23,7 +23,7 @@ export const cryptoAddAction = () => async (
   });
 
   const cryptoData = await instAPI({
-    url: `/assets`,
+    url: `/assets?limit=500`,
     method: "get"
   });
 
